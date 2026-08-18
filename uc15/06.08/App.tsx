@@ -9,9 +9,10 @@ import ListaUsuarios from './components/ListaUsuarios';
 import Relogio from './components/Relogio';
 import Busca from './components/Busca';
 import ListaProdutos from './components/ListaProdutos'
+import CardPokemon from './components/CardPokemon';
 export default function App() {
   return (
-    <Busca/>
+    <CardPokemon/>
   )
 }
 

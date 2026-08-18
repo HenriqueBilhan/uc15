@@ -11,24 +11,24 @@ import {
 const produtos = [
   {
     id: 1,
-    titulo: 'Atari 2600',
-    preco: 799.99,
+    titulo: 'Super Nintendo',
+    preco: 1399.59,
     imagem:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7NP_ra2KIWX23_I_KwihB7iOPfKaE8Yc8l60We9W9AjoSj2s9I6Fl7QY&s=10',
+      'https://http2.mlstatic.com/D_NQ_NP_2X_632652-MLB93761880025_092025-F-super-nintendo--jogos-garantia-nfe.webp',
   },
   {
     id: 2,
-    titulo: 'Televisão',
-    preco: 299.99,
+    titulo: 'Memory Card PS2',
+    preco: 34.99,
     imagem:
-      'https://cdn-br.propcart.com/vendors/GHR3ccj9ojGHIuIwUToA/items/GU02185-1.jpg',
+      'https://http2.mlstatic.com/D_NQ_NP_2X_957248-MLB114967756895_072026-F-memory-card-64mb-para-playstation-2-compativel-com-ps2.webp',
   },
   {
     id: 3,
-    titulo: 'Nintendo 64',
-    preco: 999.99,
+    titulo: 'PlayStation 4',
+    preco: 1500.00,
     imagem:
-      'https://photos.enjoei.com.br/public/300x300/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy80Mjk0MjA1OS81ZTYyMzhmYmNhYmM3ZjE0YzE0NzYxMDY2MzY4NWM4OC5qcGc',
+      'https://http2.mlstatic.com/D_NQ_NP_2X_988697-MLA46869475021_072021-F.webp',
   },
   {
     id: 4,
@@ -47,8 +47,9 @@ const produtos = [
   {
     id: 6,
     titulo: 'Console Microsoft Xbox One S 1TB Branco',
-    preco: 1.378,
-    imagem: 'https://http2.mlstatic.com/D_NQ_NP_2X_707155-MLA99522246354_122025-F.webp',
+    preco: 1378,
+    imagem:
+      'https://http2.mlstatic.com/D_NQ_NP_2X_707155-MLA99522246354_122025-F.webp',
   },
 ];
 
@@ -61,6 +62,7 @@ export default function Busca() {
 
   return (
     <View style={styles.container}>
+
       <TextInput
         style={styles.input}
         placeholder="Buscar produto"
@@ -70,12 +72,11 @@ export default function Busca() {
 
       <FlatList
         data={produtosFiltrados}
-        numColumns={3}
         keyExtractor={(item) => item.id.toString()}
-        columnWrapperStyle={styles.linha}
         contentContainerStyle={styles.lista}
         renderItem={({ item }) => (
           <View style={styles.produto}>
+
             <View style={styles.containerImagem}>
               <Image
                 source={{ uri: item.imagem }}
@@ -91,9 +92,11 @@ export default function Busca() {
             <Text style={styles.preco}>
               R$ {item.preco.toFixed(2)}
             </Text>
+
           </View>
         )}
       />
+
     </View>
   );
 }
@@ -103,9 +106,12 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 15,
     backgroundColor: '#f5f5f5',
+    alignItems: 'center',
   },
 
   input: {
+    width: '80%',
+    maxWidth: 700,
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 8,
@@ -115,20 +121,19 @@ const styles = StyleSheet.create({
   },
 
   lista: {
+    width: '100%',
+    alignItems: 'center',
     paddingBottom: 20,
   },
 
-  linha: {
-    justifyContent: 'space-between',
-    marginBottom: 15,
-  },
-
   produto: {
-    width: '31%',
+    width: 500,
+    maxWidth: '90%',
     height: 200,
     backgroundColor: '#fff',
     padding: 8,
     borderRadius: 8,
+    marginBottom: 15,
   },
 
   containerImagem: {
